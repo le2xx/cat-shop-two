@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {Pack} from '../../commons/interfaces/pack';
 
 @Component({
   selector: 'app-pack',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class PackComponent implements OnInit {
 
   constructor() { }
+
+  @Input() pack: Pack;
 
   ngOnInit() {
   }

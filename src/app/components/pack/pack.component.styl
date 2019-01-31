@@ -1,8 +1,11 @@
+@import "~src/app/commons/styles/variables"
+@import "~src/app/commons/styles/mixins"
+
 .pack
   display: block
-  width: 320px
-  height: 480px
-  background: white-color url('~src/assets/img/cat.png') no-repeat
+  width: 312px
+  height: 472px
+  background: $white-color url('~src/assets/img/cat.png') no-repeat
   background-position-y: 203px
   background-position-x: -4px
   border: solid 4px #1698d9
@@ -12,13 +15,13 @@
   margin: 0 40px
 
   &::before
-    content: ''
-    position: absolute
-    top: 0
-    left: 0
     border: 20px solid transparent
     border-left: 20px solid #1698d9
     border-top: 20px solid #1698d9
+    content: ''
+    left: 0
+    position: absolute
+    top: 0
 
   &::after
     content: ''
@@ -59,14 +62,14 @@
       color: #b3b3b3
 
   &__title
-    font(48, black-color, false, false, 700)
+    font(48, $black-color, false, false, 700)
     margin: 6px 0 0 42px
 
     &_disabled
       color: #b3b3b3
 
   &__consist
-    font(24, black-color, false, false, 700)
+    font(24, $black-color, false, false, 700)
     margin: -2px 0 15px 44px
 
     &_disabled
@@ -96,7 +99,7 @@
       background-color: #b3b3b3
 
   &__mass
-    font(42, white-color, false, 22, 400)
+    font(42, $white-color, false, 22, 400)
     margin: 21px 0 0
     text-align: center
 
@@ -109,10 +112,10 @@
     margin: auto
     left: 0
     right: 0
-    bottom: -35px
+    bottom: -34px
 
   &__info-text
-    font(13, white-color, false, 16, 400)
+    font(13, $white-color, false, 16, 400)
     text-shadow: 0 1px 0 black-color
     text-align: center
     margin: 0
