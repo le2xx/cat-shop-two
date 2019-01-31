@@ -1,0 +1,126 @@
+.pack
+  display: block
+  width: 320px
+  height: 480px
+  background: white-color url('~src/assets/img/cat.png') no-repeat
+  background-position-y: 203px
+  background-position-x: -4px
+  border: solid 4px #1698d9
+  border-radius: 12px
+  position: relative
+  clip-path: polygon(43px 0, 100% 0, 100% 107%, 0 107%, 0 43px)
+  margin: 0 40px
+
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    border: 20px solid transparent
+    border-left: 20px solid #1698d9
+    border-top: 20px solid #1698d9
+
+  &::after
+    content: ''
+    opacity: 0
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    border-radius: 8px
+
+  &_disabled
+    border: 4px solid #b3b3b3
+
+    &::before
+      border-top-color: #b3b3b3
+      border-left-color: #b3b3b3
+
+    &::after
+      content: ''
+      opacity: 0.5
+      position: absolute
+      top: 0
+      left: 0
+      background: #b3b3b3
+      width: 100%
+      height: 100%
+      border-radius: 8px
+
+  &_mouseover
+    border-color: red
+
+  &__text
+    font(16, #666, false, 16, 400)
+    margin: 19px 0 0 44px
+
+    &_disabled
+      color: #b3b3b3
+
+  &__title
+    font(48, black-color, false, false, 700)
+    margin: 6px 0 0 42px
+
+    &_disabled
+      color: #b3b3b3
+
+  &__consist
+    font(24, black-color, false, false, 700)
+    margin: -2px 0 15px 44px
+
+    &_disabled
+      color: #b3b3b3
+
+  &__detailed
+    font(14, #666, false, 16, 400)
+    margin: 0 0 0 22px
+
+    &_disabled
+      color: #b3b3b3
+
+    &_num
+      font-weight: 700
+
+  &__oval
+    width: 81px
+    height: 81px
+    background-color: #1698d9
+    border-radius: 50%
+    right: 11px
+    bottom: 11px
+    position: absolute
+    margin: auto
+
+    &_disabled
+      background-color: #b3b3b3
+
+  &__mass
+    font(42, white-color, false, 22, 400)
+    margin: 21px 0 0
+    text-align: center
+
+    &_measure
+      font-size: 21px
+      margin: 8px 0 0
+
+  &__info
+    position: absolute
+    margin: auto
+    left: 0
+    right: 0
+    bottom: -35px
+
+  &__info-text
+    font(13, white-color, false, 16, 400)
+    text-shadow: 0 1px 0 black-color
+    text-align: center
+    margin: 0
+
+    &_btn
+      color: #1698d9
+      text-decoration: underline dashed #1698d9
+      position: relative
+
+    &_disabled
+      color: #ff6

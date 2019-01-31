@@ -1,0 +1,64 @@
+{
+  "packages": [
+    {
+      "id": 1,
+      "consist": "с фуа-гра",
+      "detailed": [
+        {
+          "num": 10,
+          "text": "порций"
+        },
+        {
+          "num": null,
+          "text": "мышь в подарок"
+        },
+        {
+          "num": null,
+          "text": ""
+        }
+      ],
+      "mass": 0.5,
+      "available": true
+    },
+    {
+      "id": 2,
+      "consist": "с рыбой",
+      "detailed": [
+        {
+          "num": 40,
+          "text": "порций"
+        },
+        {
+          "num": 2,
+          "text": "мышы в подарок"
+        },
+        {
+          "num": null,
+          "text": ""
+        }
+      ],
+      "mass": 2,
+      "available": true
+    },
+    {
+      "id": 3,
+      "consist": "с курой",
+      "detailed": [
+        {
+          "num": 100,
+          "text": "порций"
+        },
+        {
+          "num": 5,
+          "text": "мышей в подарок"
+        },
+        {
+          "num": null,
+          "text": "заказчик доволен"
+        }
+      ],
+      "mass": 5,
+      "available": false
+    }
+  ]
+}

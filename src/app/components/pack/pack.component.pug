@@ -1,0 +1,18 @@
+div(class="pack")
+  p(class="pack__text") Сказочное заморское яство
+  h2(class="pack__title") Нямушка
+   //- p(class="pack__consist")= pack.id
+  //- each val in pack.detailed
+    p(class=pack.available ? "pack__detailed" : "pack__detailed pack__detailed_disabled")
+      span(class=pack.available ? "pack__detailed pack__detailed_num" :
+        "pack__detailed pack__detailed_disabled pack__detailed_num")= val.num
+      = val.num ? ' ' + val.text : val.text
+  div(class="pack__oval")
+    //- p(class="pack__mass")= pack.mass.toString().split('.').join(',')
+    p(class="pack__mass pack__mass_measure") кг
+  div(class="pack__info")
+    //- if pack.available
+      p(class="pack__info-text") Чего сидишь? Порадуй котэ,&nbsp
+        span(class="pack__info-text pack__info-text_btn") купи.
+    //- else
+      p(class="pack__info-text pack__info-text_disabled") Печалька, #{pack.consist} закончился
