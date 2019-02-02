@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import {Pack} from '../../commons/interfaces/pack';
 
 @Component({
@@ -8,11 +8,31 @@ import {Pack} from '../../commons/interfaces/pack';
 })
 export class PackComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   @Input() pack: Pack;
+  flagMouseOver = false;
+  checkedPack = false;
 
   ngOnInit() {
   }
 
+  mouseOut() {
+    if (this.pack.available) {
+      this.flagMouseOver = true;
+    }
+  }
+
+  mouseOver() {
+    if (this.pack.available) {
+      this.flagMouseOver = false;
+    }
+  }
+
+  mouseChecked() {
+    if (this.pack.available) {
+      this.checkedPack = !this.checkedPack;
+    }
+  }
 }

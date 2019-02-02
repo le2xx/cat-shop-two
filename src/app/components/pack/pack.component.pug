@@ -1,17 +1,31 @@
-div([ngClass]="pack.available ? 'pack' : 'pack pack_disabled'")
-  p([ngClass]="pack.available ? 'pack__text' : 'pack__text pack__text_disabled'") Сказочное заморское яство
+label([ngClass]=
+      "[pack.available ? 'pack' : 'pack pack_disabled'," +
+      "flagMouseOver ? 'pack_mouseover' : ''," +
+      "checkedPack ? 'pack_selected' : ''," +
+      "flagMouseOver && checkedPack ? 'pack_mouseover-selected' : '']"
+    "(mouseout)"="mouseOut()"
+    "(mouseover)"="mouseOver()")
+  input(type="checkbox" name="pack" value="{{pack.id}}" "(change)"="mouseChecked()" class="pack__input")
+  p("*ngIf"="!flagMouseOver || !checkedPack"
+    "[ngClass]"="pack.available ? 'pack__text' : 'pack__text pack__text_disabled'") Сказочное заморское яство
+  p("*ngIf"="flagMouseOver && checkedPack" class="pack__text pack__text_mouseover" ) Котэ не одобряет?
   h2([ngClass]="pack.available ? 'pack__title' : 'pack__title pack__title_disabled'") Нямушка
   p([ngClass]="pack.available ? 'pack__consist' : 'pack__consist pack__consist_disabled'") {{ pack.consist }}
   p("*ngFor"="let val of pack.detailed"
-    "[ngClass]"="pack.available ? 'pack__detailed' : " +
-  "'pack__detailed pack__detailed_disabled'")
+    "[ngClass]"="pack.available ? 'pack__detailed' : 'pack__detailed pack__detailed_disabled'")
     span([ngClass]="pack.available ? 'pack__detailed pack__detailed_num' :" +
-    "'pack__detailed pack__detailed_disabled pack__detailed_num'") {{val.num}}
+    "'pack__detailed pack__detailed_disabled pack__detailed_num'") {{ val.num }}
     | {{ val.num ? ' ' + val.text : val.text }}
-  div([ngClass]="pack.available ? 'pack__oval' : 'pack__oval pack__oval_disabled'")
+  div([ngClass]=
+        "[pack.available ? 'pack__oval' : 'pack__oval pack__oval_disabled'," +
+        "flagMouseOver ? 'pack__oval_mouseover' : ''," +
+        "checkedPack ? 'pack__oval_selected' : ''," +
+        "flagMouseOver && checkedPack ? 'pack__oval_mouseover-selected' : '']")
     p(class="pack__mass") {{ pack.mass.toString().split('.').join(',') }}
     p(class="pack__mass pack__mass_measure") кг
-  div(class="pack__info")
-    p(*ngIf="pack.available" class="pack__info-text") Чего сидишь? Порадуй котэ,&nbsp;
-      span(class="pack__info-text pack__info-text_btn") купи.
-    p(*ngIf="!pack.available" class="pack__info-text pack__info-text_disabled") Печалька, {{ pack.consist }} закончился.
+div(class="pack__info")
+  p(*ngIf="pack.available && !checkedPack" class="pack__info-text") Чего сидишь? Порадуй котэ,&nbsp;
+    span([ngClass]="flagMouseOver ? 'pack__info-text pack__info-text_btn' : 'pack__info-text pack__info-text_mouseover'"
+        "(click)"="mouseChecked()") купи.
+  p(*ngIf="!pack.available" class="pack__info-text pack__info-text_disabled") Печалька, {{ pack.consist }} закончился.
+  p(*ngIf="checkedPack" class="pack__info-text") {{ pack.description }}

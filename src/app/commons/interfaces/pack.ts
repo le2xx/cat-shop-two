@@ -5,5 +5,6 @@ export interface Pack {
   consist: string;
   detailed: Detailed[];
   mass: number;
+  description: string;
   available: boolean;
 }

@@ -7,6 +7,7 @@
   background-position-y: 203px
   border: solid 4px #1698d9
   border-radius: 12px
+  cursor: pointer
   clip-path: polygon(43px 0, 100% 0, 100% 107%, 0 107%, 0 43px)
   display: block
   height: 472px
@@ -52,7 +53,28 @@
       border-radius: 8px
 
   &_mouseover
-    border-color: red
+    border-color: #2ea8e6
+
+    &::before
+      border-left-color: #2ea8e6
+      border-top-color: #2ea8e6
+
+  &_selected
+    border-color: #d91667
+
+    &::before
+      border-left-color: #d91667
+      border-top-color: #d91667
+
+  &_mouseover-selected
+    border-color: #e62e7a
+
+    &::before
+      border-left-color: #e62e7a
+      border-top-color: #e62e7a
+
+  &__input
+    display: none
 
   &__text
     font(16, #666, false, 16, 400)
@@ -60,6 +82,9 @@
 
     &_disabled
       color: #b3b3b3
+
+    &_mouseover
+      color: #e62e7a;
 
   &__title
     font(48, $black-color, false, false, 700)
@@ -98,6 +123,15 @@
     &_disabled
       background-color: #b3b3b3
 
+    &_mouseover
+      background-color: #2ea8e6
+
+    &_selected
+      background-color: #d91667
+
+    &_mouseover-selected
+      background-color: #e62e7a
+
   &__mass
     font(42, $white-color, false, 22, 400)
     margin: 21px 0 0
@@ -108,22 +142,25 @@
       margin: 8px 0 0
 
   &__info
-    position: absolute
-    margin: auto
-    left: 0
-    right: 0
-    bottom: -34px
+    margin: 15px auto
+    width: 320px
+
 
   &__info-text
     font(13, $white-color, false, 16, 400)
-    text-shadow: 0 1px 0 black-color
+    text-shadow: 0 1px 0 $black-color
     text-align: center
     margin: 0
+    width: 320px
 
     &_btn
+      cursor: pointer
       color: #1698d9
       text-decoration: underline dashed #1698d9
-      position: relative
 
     &_disabled
       color: #ff6
+
+    &_mouseover
+      color: #2ea8e6
+      text-decoration: underline dashed #2ea8e6
