@@ -1,13 +1,11 @@
-@require '~src/app/commons/styles/variables'
-@require '~src/app/commons/styles/mixins'
+@import '~src/app/commons/styles/variables'
+@import '~src/app/commons/styles/mixins'
 
 .header
 
   &__title
-    color: white-color
+    font(36, $white-color, false, false, 400)
     font-family: "Exo 2.0- Thin", sans-serif
-    font-size: 36px
-    font-weight: 400
     text-align: center
-    text-shadow: 0 1px 0 black-color
+    text-shadow: 0 1px 0 $black-color
     width: 100%

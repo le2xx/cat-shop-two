@@ -1,18 +1,18 @@
-@import "~src/app/commons/styles/variables"
-@import "~src/app/commons/styles/mixins"
+@import '~src/app/commons/styles/variables'
+@import '~src/app/commons/styles/mixins'
 
 .pack
-  display: block
-  width: 312px
-  height: 472px
-  background: $white-color url('~src/assets/img/cat.png') no-repeat
-  background-position-y: 203px
+  background: $white-color url('/assets/img/cat.png') no-repeat
   background-position-x: -4px
+  background-position-y: 203px
   border: solid 4px #1698d9
   border-radius: 12px
-  position: relative
   clip-path: polygon(43px 0, 100% 0, 100% 107%, 0 107%, 0 43px)
+  display: block
+  height: 472px
   margin: 0 40px
+  position: relative
+  width: 312px
 
   &::before
     border: 20px solid transparent
