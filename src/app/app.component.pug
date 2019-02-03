@@ -4,4 +4,5 @@ header
   app-header
 main
   div(class="app")
-    app-pack(*ngFor="let pack of packages" "[pack]"="pack")
+    section(*ngFor="let pack of packages" )
+      app-pack("[pack]"="pack")
