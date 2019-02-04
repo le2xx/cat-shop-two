@@ -1,8 +1,7 @@
-include commons/pug/mixins
-
-header
-  app-header
-main
-  div(class="app")
-    section(*ngFor="let pack of packages" )
-      app-pack("[pack]"="pack")
+div(class="app")
+  header
+    app-header
+  main
+    div(class="app__packages")
+      section(*ngFor="let pack of packages")
+        app-pack("[pack]"="pack")
